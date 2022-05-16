@@ -1,0 +1,14 @@
+{
+  "name": "modal_window",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "dead-server --port=3000 --host=localhost"
+  },
+  "author": "Algirdas <algirduj@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "dead-server": "^1.0.6"
+  }
+}
