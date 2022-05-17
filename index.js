@@ -10,22 +10,23 @@ const fruits = [
 //   -------------------
 
 function createCard (products) {
-    const card = document.createElement("div");
-    card.classList.add('row');
-products.forEach(element => {
+  console.log('counter');
+   // console.log(row);
+products.forEach((element, index) => {   let card = document.createElement('div')
+document.createElement('div')
+card.classList.add('col')
 card.insertAdjacentHTML("afterbegin",
-`<div class="col">
-<div class="card">
-  <img class="card-img-top" style="height: 300px;" src="${element.img}">
+`<div class="card" style="width: 300px">
+  <img class="card-img-top" style="height: 300px;"  src="${element.img}">
   <div class="card-body">
     <h5 class="card-title">${element.title}</h5>
     <a class="btn btn-primary" show-price>Show price</a>
-    <a class="btn btn-danger">Remove</a>
+    <a class="btn btn-danger" show-remove>Remove</a>
   </div>
 </div>`
 )
 
-const modal = $.modal({
+const modalShowPrice = $.modal({
     title: element.title,
     closable: true,
     content: `
@@ -35,15 +36,47 @@ const modal = $.modal({
     footerButton: [
         {
             text: 'Ok', type: 'primary', handler() {
-                modal.close();
+                modalShowPrice.close();
             }
         },
     ]
 })
 
+const modalRemove = $.modal({
+    title: element.title,
+    closable: true,
+    content: `
+   <h3>Price: ${element.price} Eu</h3>
+    `,
+    width: '600px',
+    footerButton: [
+        {
+            text: 'Remove', type: 'primary', handler() {
+                modalRemove.close()
+                products.splice(index, 1)
+                console.log(products);
+                cont.innerHTML = ''
+                createCard(products);
+            }
+        },
+        {
+            text: 'Cancel', type: 'danger', handler() {
+                modalRemove.close();
+        }
+    }
+    ]
+})
 
-card.querySelector('[show-price]').addEventListener('click', modal.open  )
-document.querySelector('main').appendChild(card)
+
+card.querySelector('[show-price]').addEventListener('click', modalShowPrice.open  )
+//document.querySelector('main').appendChild(card)
+
+
+card.querySelector('[show-remove]').addEventListener('click', modalRemove.open  )
+//document.querySelector('main').appendChild(card)
+
+const cont = document.getElementById('cards_container')
+cont.appendChild(card);
 })
 
 }
