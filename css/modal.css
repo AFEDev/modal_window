@@ -24,7 +24,7 @@
 }
 
 .amodal.hide .modal-overlay {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, .5);
     ;
 }
 
@@ -45,14 +45,22 @@
     transition: background .2s ease-in;
 }
 
+
 .modal-window {
-    width: 600px;
     border-radius: 5px;
     background: #fff;
     margin: 0 auto;
     transform: translateY(-200px);
     transition: transform .2s ease-in;
 }
+
+.slide-out-bck-center {
+    -webkit-animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+
 
 .modal-header {
     padding: 5px 10px;
