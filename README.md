@@ -7,5 +7,5 @@ Created for lerning purpose, but can be used as separate plugin in any webpage f
 
 **Client:** JavaScript, Bootstrap
 
-**Server:** --
+**Server:** -
 
