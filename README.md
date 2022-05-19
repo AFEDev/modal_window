@@ -1,20 +1,11 @@
-# modal_window
+# OOP modal window mini project
+
+Created for lerning purpose, but can be used as separate plugin in any webpage for any type modal modal window. Fully configurable.  
 
 
----
-todo:
-<br> create config obj: 
-<br> title: string
-<br> closable: boolean
-<br> width: string
-<br> destroy: remove modal window
-<br>
+## Tech Stack
 
----
-window close on overlay
-<br>set sontent(html:string):void | public
-<br>onClose():void
-<br>onOpen():void
-<br>beforeClose(): boolean
-<br>animate css 
+**Client:** JavaScript, Bootstrap
+
+**Server:** --
 
